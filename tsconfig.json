@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
 
     /* Projects */
     // "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
@@ -101,5 +103,6 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "noUncheckedIndexedAccess": true,
     "noEmit": true
-  }
+  },
+  "include": ["src"]
 }
