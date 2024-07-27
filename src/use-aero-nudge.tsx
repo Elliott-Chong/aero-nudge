@@ -1,34 +1,40 @@
-import { InfoCircledIcon } from '@radix-ui/react-icons'
+import './styles.css'
 import React from 'react'
 import { toast } from 'sonner'
 
 type Props = {
     description?: string
-    onAction: () => Promise<void>
-    onReset?: () => void
+    onAction: () => any
+    onReset?: () => any
+    title?: string
     isLoading: boolean
     show: boolean
+    className?: string
 }
 
-const useActionToast = ({ onAction, onReset, isLoading, show, description }: Props) => {
+const useAeroNudge = ({ onAction, onReset, title = 'Unsaved Changes', isLoading, show, description, className }: Props) => {
     const toastId = React.useRef<string | number>()
 
     React.useEffect(() => {
         const renderToastContent = (isLoading: boolean) => {
             const ToastContent = () => {
                 return (
-                    <div className='mx-auto flex py-2 w-fit min-w-[400px] text-white items-center rounded-full bg-gradient-to-b from-gray-700 to-gray-900 pl-4 pr-3 shadow-xl shadow-black/30'>
-                        <InfoCircledIcon className='size-4 mr-1' />
-                        <div className="flex flex-col">
-                            <span className='text-base ml-2'>Unsaved Changes</span>
-                            {description && <span className='text-xs text-gray-400 ml-2'>{description}</span>}
+                    <div className={`aero-nudge-container ${className}`}>
+                        {/* <InfoCircledIcon className='size-4 mr-1' /> */}
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className='aero-nudge-icon'>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                        </svg>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '0.2rem' }}>
+                            <span>{title}</span>
+                            {description && <span style={{ fontSize: '0.75rem', color: '#a1a1aa', marginTop: '0.2rem' }}>{description}</span>}
                         </div>
-                        <div className="ml-auto flex items-center gap-2 text-sm">
+                        <div style={{ display: 'flex', flexDirection: 'row', gap: '0.4rem', marginLeft: 'auto' }}>
                             {onReset && (
                                 <button
-                                    className='bg-red-500 transition-all text-white px-4 py-1.5 rounded-full drop-shadow-xl disabled:opacity-60'
-                                    onClick={() => {
-                                        onReset()
+                                    className='aero-nudge-reset aero-nudge-button'
+                                    onClick={async () => {
+                                        await onReset()
                                         toast.dismiss(toastId.current)
                                     }}
                                     disabled={isLoading}
@@ -37,7 +43,7 @@ const useActionToast = ({ onAction, onReset, isLoading, show, description }: Pro
                                 </button>
                             )}
                             <button
-                                className='transition-all bg-green-500 text-white px-4 py-1.5 rounded-full drop-shadow-xl disabled:opacity-60'
+                                className='aero-nudge-action aero-nudge-button'
                                 onClick={async () => {
                                     await onAction()
                                     toast.dismiss(toastId.current)
@@ -76,4 +82,4 @@ const useActionToast = ({ onAction, onReset, isLoading, show, description }: Pro
     }, [show, isLoading, onAction, onReset, description])
 }
 
-export default useActionToast
+export default useAeroNudge
