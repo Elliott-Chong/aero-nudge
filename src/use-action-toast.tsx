@@ -73,7 +73,7 @@ const useActionToast = ({ onAction, onReset, isLoading, show, description }: Pro
             toast.dismiss(toastId.current)
             toastId.current = undefined
         }
-    }, [show, isLoading, onAction, onReset])
+    }, [show, isLoading, onAction, onReset, description])
 }
 
 export default useActionToast
