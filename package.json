@@ -7,6 +7,7 @@
   "description": "Clerk inspired floating toast button for confirmation of actions, powered by Sonner",
   "scripts": {
     "build": "tsup index.ts --format cjs,esm --dts",
+    "release": "pnpm run build && changeset publish",
     "lint": "tsc"
   },
   "devDependencies": {
