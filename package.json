@@ -1,0 +1,19 @@
+{
+  "name": "aero-nudge",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "description": "Clerk inspired floating toast button for confirmation of actions, powered by Sonner",
+  "scripts": {
+    "build": "tsup index.ts --format cjs,esm --dts",
+    "lint": "tsc"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "tsup": "^8.2.3",
+    "typescript": "^5.0.0"
+  },
+  "author": "Elliott Chong",
+  "license": "MIT"
+}
