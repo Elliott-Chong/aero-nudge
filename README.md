@@ -18,6 +18,26 @@ yarn add aero-nudge
 pnpm add aero-nudge
 ```
 
+## Pre-requisites
+
+Please make sure to install sonner and import the Toaster component into your root layout first! More instructions [here](https://github.com/emilkowalski/sonner)
+
+```typescript
+import { Toaster, toast } from 'sonner';
+
+// ...
+
+function App() {
+  return (
+    <div>
+      <Toaster />
+      <button onClick={() => toast('My first toast')}>Give me a toast</button>
+    </div>
+  );
+}
+```
+
+
 ## Usage
 
 ```typescript
