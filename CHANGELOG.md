@@ -1,5 +1,11 @@
 # aero-nudge
 
+## 1.2.2
+
+### Patch Changes
+
+- efb01cf: fix
+
 ## 1.2.1
 
 ### Patch Changes
