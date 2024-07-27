@@ -1,5 +1,12 @@
 # aero-nudge
 
+## 1.2.1
+
+### Patch Changes
+
+- 533a0ba: remove css
+- 83774a3: move to styled components
+
 ## 1.2.0
 
 ### Minor Changes
