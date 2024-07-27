@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "description": "Clerk inspired floating toast button for confirmation of actions, powered by Sonner",
   "scripts": {
-    "build": "tsup index.ts --format cjs,esm --dts && cp src/styles.css dist/",
+    "build": "tsup index.ts --format cjs,esm --dts",
     "release": "pnpm run build && changeset publish",
     "dev": "vite",
     "lint": "tsc"
@@ -20,15 +20,15 @@
     "vite": "^5.3.5"
   },
   "files": [
-    "dist",
-    "src/styles.css"
+    "dist"
   ],
   "author": "Elliott Chong",
   "license": "MIT",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sonner": "^1.5.0"
+    "sonner": "^1.5.0",
+    "styled-components": "^6.1.12"
   },
   "publishConfig": {
     "access": "public"
