@@ -1,5 +1,11 @@
 # aero-nudge
 
+## 1.2.0
+
+### Minor Changes
+
+- 12174bc: fix css
+
 ## 1.1.0
 
 ### Minor Changes
