@@ -92,7 +92,6 @@ This hook creates a floating toast button for confirming actions.
 ## Dependencies
 
 - React
-- @radix-ui/react-icons
 - sonner
 
 ## License
