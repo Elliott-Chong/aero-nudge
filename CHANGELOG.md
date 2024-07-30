@@ -1,5 +1,11 @@
 # aero-nudge
 
+## 1.2.3
+
+### Patch Changes
+
+- 6fb766d: add github url
+
 ## 1.2.2
 
 ### Patch Changes
